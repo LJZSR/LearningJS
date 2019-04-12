@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function changeText(id) {
+                id.innerHTML = "谢谢";
+            }
+            function displayDate() {
+                document.getElementById("demo").innerHTML = Date();
+            }
+        </script>
+    </head>
+    <body>
+        <h1 onclick="this.innerHTML = '谢谢'">请点击该文本</h1>
+        <h1 onclick="changeText(this)">请点击该文本</h1>
+        <p>点击这里就可以执行 DispalyDate() 函数</p>
+        <button type="button" onclick="displayDate()">点击这里</button>
+        <p id="demo"></p>
+    </body>
+</html>

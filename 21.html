@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            document.write(Date());
+        </script>
+        <p id="p1">Hello World!</p>
+        <script>
+            document.getElementById("p1").innerHTML = "New text!"
+        </script>
+        <p>上面一个段落的内容被 JavaScript 脚本修改了</p>
+        <h1 id="header">Old Header</h1>
+        <script>
+            var element = document.getElementById("header");
+            element.innerHTML = "New Header"
+        </script>
+        <p>Old Header 被修改为 New Header</p>
+        <p id="p2">Hello World</p>
+        <script>
+            document.getElementById("p2").style.color = "blue";
+            document.getElementById("p2").style.fontSize = "larger";
+            document.getElementById("p2").style.fontFamily = "Arial";
+        </script>
+        <p>上面段落已经被脚本修改</p>
+        <h1 id="id1">My Heading 1</h1>
+        <button type="button" onclick="document.getElementById('id1').style.color = 'red'">点击这里</button>
+        <p id="p3">这是一段文本</p>
+        <button type="button" onclick="document.getElementById('p3').style.visibility = 'hidden'">隐藏文本</button>
+        <button type="button" onclick="document.getElementById('p3').style.visibility = 'visible'">显示文本</button>
+    </body>
+</html>
