@@ -6,10 +6,15 @@
                 if (navigator.cookieEnabled==true) alert("已启用Cookie");
                 else alert("未启用Cookie");
             }
+            function myFunction(x) {
+                x.value = x.value.toUpperCase();
+            }
         </script>
     </head>
     <body onload="checkCookies()">
-        
         <p>提示框会告诉你，浏览器是否已经启用Cookie</p>
+        <p>请输入英文字符</p>
+        <input type="text" onchange="myFunction(this)">
+        <p>当你离开输入字段时，会触发将小写字母转化为大写字母的函数</p>
     </body>
 </html>
