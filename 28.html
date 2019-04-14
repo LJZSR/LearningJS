@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        var mycars = new Array();
+        mycars[0] = "Saab";
+        mycars[1] = "Volvo";
+        mycars[2] = "BMW";
+        for (var i=0; i<mycars.length; ++i) {
+            document.write(mycars[i] + "<br>");
+        }
+        document.write("<br>");
+        for (x in mycars) {
+            document.write(mycars[x] + "<br>");
+        }
+        var arr = new Array();
+        arr[0] = "George";
+        arr[1] = "John";
+        arr[2] = "Thomas";
+        var arr2 = new Array();
+        arr2[0] = "James";
+        arr2[1] = "Adrew";
+        arr2[2] = "Martin";
+        document.write("<br>");
+        document.write(arr.concat(arr2)); 
+        var arr3 = new Array();
+        arr3[0] = "George";
+        arr3[1] = "John";
+        arr3[2] = "Thomas";
+        document.write("<br>");
+        document.write(arr3.join());
+        document.write("<br>");
+        document.write(arr3.join("."));
+        var arr4 = new Array();
+        arr4[0] = "George";
+        arr4[1] = "John";
+        arr4[2] = "Thomas";
+        arr4[3] = "James";
+        arr4[4] = "Adrew";
+        arr4[5] = "Martin";
+        document.write("<br>");
+        document.write(arr4 + "<br>");
+        document.write(arr4.sort());
+    </script>
+</html>
