@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            function person(firstname, lastname, age) {
+                this.firstname = firstname;
+                this.lastname = lastname;
+                this.age = age;
+                this.changeName = changeName;
+            }
+            function changeName(name) {
+                this.firstname = name;
+            }
+            var myMother = new person("Bill", "Gates", 56);
+            myMother.changeName("Ballmer");
+            document.write(myMother.firstname);
+        </script>
+    </body>
+</html>
