@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            // var person = new Object();
+            // person.firstname = "Bill";
+            // person.lastname = "Gates";
+            // person.age = 56;
+            // var person = {
+            //     firstname: "Bill",
+            //     lastname: "Gates",
+            //     age: 56,
+            // }
+            function person(firstname, lastname, age) {
+                this.firstname = firstname;
+                this.lastname = lastname;
+                this.age = age;
+            }
+            var  myFather = new person("Bill", "Gates", 56);
+            document.write("<p>" + myFather.firstname + " is " + myFather.age + " years old!</p>");
+        </script>
+    </body>
+</html>
