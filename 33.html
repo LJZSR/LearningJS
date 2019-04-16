@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <input type="button" onclick="disp_alert()" value="显示警告框">
+    <input type="button" onclick="disp_confirm()" value="显示确认框">
+    <input type="button" value="现实提示框" onclick="disp_prompt()">
+    <script>
+        function disp_alert() {
+            alert("这是一个警告框！");
+        }
+        function disp_confirm() {
+            r = confirm("这是一个确认框，Press a buttom!");
+            if (r==true) alert("You pressed OK!");
+            else alert("You pressed Cancel!");
+        }
+        function disp_prompt() {
+            var name = prompt("请输入你的名字", "Bill Gates");
+            if (name!=null && name!=''){
+                document.write("你好！" + name + " 今天过得怎么样？");
+            }
+        }
+    </script>
+</html>
