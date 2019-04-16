@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p id="demo"></p>
+        <button type="button" onclick="newDoc()">加载新文档</button>
+        <br />
+        <script>
+            var h = window.innerHeight;
+            var w = window.innerWidth;
+            document.getElementById("demo").innerHTML = "<p>浏览器的内部窗口宽度：" + w + "，高度：" + h + "<\p>";
+            document.write("可用宽度：" + screen.availWidth + "<br>");
+            document.write("可用高度：" + screen.availHeight + "<br>");
+            document.write(location.href + "<br>");
+            document.write(location.pathname + "<br>");
+            function newDoc() {
+                location.assign("http://www.w3school.com.cn");
+            }
+        </script>
+    </body>
+</html>
