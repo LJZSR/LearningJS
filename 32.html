@@ -3,7 +3,12 @@
     <body>
         <p id="demo"></p>
         <button type="button" onclick="newDoc()">加载新文档</button>
-        <br />
+        <br>
+        <button type="button" onclick="goBack()">后退</button>
+        <br>
+        <button type="button" onclick="goForward()">前进</button>
+        <br>
+        <p id="example"></p>
         <script>
             var h = window.innerHeight;
             var w = window.innerWidth;
@@ -15,6 +20,21 @@
             function newDoc() {
                 location.assign("http://www.w3school.com.cn");
             }
+            function goBack() {
+                history.back();
+            }
+            function goForward() {
+                history.forward();
+            }
+            txt = "<p>Browser CodeName: " + navigator.appCodeName + "</p>";
+            txt+= "<p>Browser Name: " + navigator.appName + "</p>";
+            txt+= "<p>Browser Version: " + navigator.appVersion + "</p>";
+            txt+= "<p>Cookies Enabled: " + navigator.cookieEnabled + "</p>";
+            txt+= "<p>Platform: " + navigator.platform + "</p>";
+            txt+= "<p>User-agent header: " + navigator.userAgent + "</p>";
+            txt+= "<p>User-agent language: " + navigator.systemLanguage + "</p>";
+
+            document.getElementById("example").innerHTML=txt;
         </script>
     </body>
 </html>
