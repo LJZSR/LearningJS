@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="button" value="显示定时的警告框" onclick="timedMsg()">
+        <br>
+        <input type="button" value="请点击上面的按钮，输入框会显示循环计时" onclick="timedText()">
+        <input type="text" id="demo">
+        <input type="button" value="点击停止计时" onclick="clearCount()">
+        <p>请点击上面的按钮，警告框会在5s后显示</p>
+        <script>
+            var t1;
+            var counter = 0;
+            function timedMsg() {
+                var t2 = setTimeout("alert('5s')", 5000);
+            }
+            function timedText() {
+                document.getElementById("demo").value = counter;
+                counter = counter + 1;
+                t1 = setTimeout("timedText()", 1000);
+            }
+            function clearCount() {
+                clearTimeout(t1);
+            }
+        </script>
+    </body>
+</html>
