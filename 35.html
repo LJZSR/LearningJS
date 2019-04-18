@@ -9,7 +9,7 @@
                     document.cookie = c_name + "=" + escape(value) + ";";
                 }
                 else {
-                    document.cookie = c_name + "=" + escape(value) + "; expire=" + exdate.toUTCString();
+                    document.cookie = c_name + "=" + escape(value) + "; expire=" + exdate.toGMTtring();
                 }
             }
             function getCookie(c_name) {
