@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="div1">
+            <p id="p1">This is one paragarphy</p>
+            <p id="p2">This is another paragarphy</p>
+        </div>
+        <script>
+            var para = document.createElement("p");
+            var node = document.createTextNode("This is new");
+            para.append(node);
+            var x = document.getElementById("div1");
+            x.append(para);
+        </script>
+    </body>
+</html>
