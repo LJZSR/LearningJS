@@ -5,11 +5,13 @@
         <script>
             function myFunction() {
                 $("#h01").html("Hello jQuery!");
+                $("#h02").attr("style", "color:red").html("Hello jQuery!");
             }
             $(document).ready(myFunction);
         </script>
     </head>
     <body>
         <h1 id="h01"></h1>
+        <h1 id="h02"></h1>
     </body>
 </html>
