@@ -4,17 +4,21 @@
         <script src="js/jquery-3.4.0.js"></script>
         <script>
             $(document).ready(function() {
-                $("#demo").click(function() {
+                $("#demo1").click(function() {
                     $("p").hide();
-                })
-            })
+                });
+                $("#demo2").click(function() {
+                    $("p").css("background-color", "red");
+                });
+            });
         </script>
     </head>
     <body>
         <h1>This is a heading</h1>
         <p>This is a paragraph.</p>
         <p>This is another paragraph.</p>
-        <input type="button" id="demo" value="点击按钮">
+        <input type="button" id="demo1" value="点击按钮">
+        <input type="button" id="demo2" value="点击按钮">
     </body>
     
 </html>
