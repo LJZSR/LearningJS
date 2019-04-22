@@ -21,15 +21,21 @@
                     $("#div1").fadeToggle();
                     $("#div2").fadeToggle("slow");
                     $("#div3").fadeToggle(3000);
+                });
+                $("#change").click(function() {
+                    $("#div1").fadeTo("slow", 0.30);
+                    $("#div2").fadeTo("slow", 0.60);
+                    $("#div3").fadeTo("slow", 0.90);
                 })
             })
         </script>
     </head>
     <body>
-        <p>演示fadeIn()方法、fadeOut()方法、fadeToggle()方法</p>
-        <input id="in" type="button" value="点击这里，使四个矩形淡入">
-        <input id="out" type="button" value="点击这里，使四个矩形淡出">
-        <input id="exchange" type="button" value="点击这里，使四个矩形淡入淡出">
+        <p>演示fadeIn()、fadeOut()、fadeToggle()和fadeTo()方法</p>
+        <input id="in" type="button" value="点击这里，使三个矩形淡入">
+        <input id="out" type="button" value="点击这里，使三个矩形淡出">
+        <input id="exchange" type="button" value="点击这里，使三个矩形淡入淡出">
+        <input id="change" type="button" value="点击这里，改变三个矩形的透明度">
         <div id="div1" style="width: 80px; height: 80px; background-color: red; margin: 20px;"></div>
         <div id="div2" style="width: 80px; height: 80px; background-color: green; margin: 20px;"></div>
         <div id="div3" style="width: 80px; height: 80px; background-color: blue; margin: 20px;"></div>
