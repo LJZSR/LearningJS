@@ -2,13 +2,36 @@
 <html>
     <head>
         <script src="js/jquery-3.4.0.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#div1").hide();
+                $("#div2").hide();
+                $("#div3").hide();
+                $("#in").click(function() {
+                    $("#div1").fadeIn();
+                    $("#div2").fadeIn("slow");
+                    $("#div3").fadeIn(3000);
+                });
+                $("#out").click(function() {
+                    $("#div1").fadeOut();
+                    $("#div2").fadeOut("slow");
+                    $("#div3").fadeOut(3000);
+                });
+                $("#exchange").click(function() {
+                    $("#div1").fadeToggle();
+                    $("#div2").fadeToggle("slow");
+                    $("#div3").fadeToggle(3000);
+                })
+            })
+        </script>
     </head>
     <body>
-        <p>演示fadeIn()方法和fadeOut()方法</p>
+        <p>演示fadeIn()方法、fadeOut()方法、fadeToggle()方法</p>
         <input id="in" type="button" value="点击这里，使四个矩形淡入">
         <input id="out" type="button" value="点击这里，使四个矩形淡出">
-        <div id="div1" style="width: 80px; height: 80px; background-color: red"></div>
-        <div id="div2" style="width: 80px; height: 80px; background-color: green"></div>
-        <div id="div3" style="width: 80px; height: 80px; background-color: blue"></div>
+        <input id="exchange" type="button" value="点击这里，使四个矩形淡入淡出">
+        <div id="div1" style="width: 80px; height: 80px; background-color: red; margin: 20px;"></div>
+        <div id="div2" style="width: 80px; height: 80px; background-color: green; margin: 20px;"></div>
+        <div id="div3" style="width: 80px; height: 80px; background-color: blue; margin: 20px;"></div>
     </body>
 </html>
