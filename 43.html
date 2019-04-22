@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#hide").click(function() {
+                    $("#h1").hide();
+                });
+                $("#show").click(function() {
+                    $("#h1").show();
+                });
+                $("#slowhide").click(function() {
+                    $(".p1").hide(1000);
+                });
+                $("#slowshow").click(function() {
+                    $(".p1").show(1000);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p id="h1">如果点击”隐藏“按钮，我就会消失。</p>
+        <input type="button" id="hide" value="隐藏">
+        <input type="button" id="show" value="显示">
+        <br>
+        <input type="button" id="slowhide" value="隐藏">
+        <input type="button" id="slowshow" value="显示">
+        <p class="p1">这是一个段落</p>
+        <p class="p1">这是另个一段落</p>
+    </body>
+</html>
