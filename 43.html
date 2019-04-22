@@ -16,6 +16,9 @@
                 $("#slowshow").click(function() {
                     $(".p1").show(1000);
                 });
+                $("#exchange").click(function (){
+                    $(".p2").toggle(500);
+                })
             });
         </script>
     </head>
@@ -24,9 +27,13 @@
         <input type="button" id="hide" value="隐藏">
         <input type="button" id="show" value="显示">
         <br>
+        <p class="p1">这是一个段落。</p>
+        <p class="p1">这是另个一段落。</p>
         <input type="button" id="slowhide" value="隐藏">
         <input type="button" id="slowshow" value="显示">
-        <p class="p1">这是一个段落</p>
-        <p class="p1">这是另个一段落</p>
+        <br>
+        <p class="p2">这是一个段落。</p>
+        <p class="p2">这是另个一段落。</p>
+        <input type="button" id="exchange" value="切换">
     </body>
 </html>
