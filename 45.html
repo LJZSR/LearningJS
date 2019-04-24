@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+        <style>
+            div.panel,p.flip {
+                margin:0px;
+                padding:5px;
+                text-align:center;
+                background:#e5eecc;
+                border:solid 1px #c3c3c3;
+            }
+            div.panel {
+                height:120px;
+                display:none;
+            }
+        </style>
+        <script>
+            $(document).ready(function() {
+                $(".flip").click(function() {
+                    $(".panel").slideToggle();
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="panel">
+            <p>啦啦啦</p>
+        </div>
+        <p class="flip">请点击这里</p>
+    </body>
+</html>
