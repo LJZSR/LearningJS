@@ -17,7 +17,11 @@
                         width:'400px',
                     });
                 });
-
+                $("#button3").click(function() {
+                    $("#div3").animate({
+                        height:'toggle',
+                    });
+                });
             })
         </script>
     </head>
@@ -25,7 +29,9 @@
         <p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
         <input type="button" value="开始动画" id="button1">
         <input type="button" value="开始动画" id="button2">
+        <input type="button" value="开始动画" id="button3">
         <div id="div1" style="background: green; width: 200px; height: 200px; position: absolute; top: 100px"></div>
         <div id="div2" style="background: green; width: 200px; height: 200px; position: absolute; top: 350px"></div>
+        <div id="div3" style="background: green; width: 200px; height: 200px; position: absolute; top: 600px"></div>
     </body>
 </html>
