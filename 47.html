@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#button1").click(function() {
+                    var div = $("#div1");
+                    div.animate({height:'300px',opacity:'0.4'},"slow");
+                    div.animate({width:'300px',opacity:'0.8'},"slow");
+                    div.animate({height:'100px',opacity:'0.4'},"slow");
+                    div.animate({width:'100px',opacity:'0.8'},"slow");
+                })
+            })
+        </script>
+
+    </head>
+    <body>
+        <input type="button" id="button1" value="开始动画">
+        <div id="div1" style="background: blueviolet; height: 100px; width: 100px; position: absolute"></div>
+    </body>
+</html>
