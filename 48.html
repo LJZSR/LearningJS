@@ -11,9 +11,19 @@
             }
             #panel {
                 display: none;
+                height: 200px;
             } 
         </style>
-        
+        <script>
+            $(document).ready(function() {
+                $("#flip").click(function() {
+                    $("#panel").slideDown(3000);
+                });
+                $("#stop").click(function() {
+                    $("#panel").stop();
+                })
+            })
+        </script>
     </head>
     <body>
         <input type="button" id="stop" value="停止动画">
