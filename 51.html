@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#btn1").click(function() {
+                    alert("Text: " + $("p").text());
+                });
+                $("#btn2").click(function() {
+                    alert("Html: " + $("p").html());
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <p>这是段落中的<b>粗体</b>文字</p>
+        <input type="button" id="btn1" value="显示段落文本">
+        <input type="button" id="btn2" value="显示段落html">
+    </body>
+</html>
