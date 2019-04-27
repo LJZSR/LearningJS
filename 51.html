@@ -13,6 +13,9 @@
                 $("#btn3").click(function() {
                     alert("Val: " + $("#name").val());
                 });
+                $("#btn4").click(function() {
+                    alert("Attr: " + $("a").attr("href"));
+                });
             })
         </script>
     </head>
@@ -22,5 +25,7 @@
         <input type="button" id="btn2" value="显示段落html">
         <p>姓名：<input id="name" type="text" value="jzs"></p>
         <input type="button" id="btn3" value="显示val">
+        <p><a href="http://www.w3school.com.cn">w3school</a></p>
+        <input type="button" id="btn4" value="显示attr">
     </body>
 </html>
