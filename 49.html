@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("input").click(function() {
+                    $("p").hide(2000, function() {
+                        alert("This paragraphy is now hidden!");
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <input type="button" value="Hide">
+        <p>This is a paragraphy with some content.</p>
+    </body>
+</html>
