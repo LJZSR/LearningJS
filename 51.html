@@ -9,7 +9,10 @@
                 });
                 $("#btn2").click(function() {
                     alert("Html: " + $("p").html());
-                })
+                });
+                $("#btn3").click(function() {
+                    alert("Val: " + $("#name").val());
+                });
             })
         </script>
     </head>
@@ -17,5 +20,7 @@
         <p>这是段落中的<b>粗体</b>文字</p>
         <input type="button" id="btn1" value="显示段落文本">
         <input type="button" id="btn2" value="显示段落html">
+        <p>姓名：<input id="name" type="text" value="jzs"></p>
+        <input type="button" id="btn3" value="显示val">
     </body>
 </html>
