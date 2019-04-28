@@ -17,6 +17,13 @@
                     $("ol").append("<li>Appended Item</li>");
                 });
             })
+            function appendText() {
+                var text1 = "<p>Text.";
+                var text2 = document.createElement("p");
+                text2.innerText = "Text."
+                var text3 = $("<p></p>").text("Text.");
+                $("body").append(text1, text2, text3);
+            }
         </script>
     </head>
     <body>
@@ -31,5 +38,7 @@
         <input type="button" id="btn2" value="追加文本">
         <input type="button" id="btn3" value="添加表项">
         <input type="button" id="btn4" value="追加表项">
+        <br>
+        <input type="button" onclick="appendText()" value="追加文本">
     </body>
 </html>
