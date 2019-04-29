@@ -16,6 +16,12 @@
                 $("#btn4").click(function() {
                     $("ol").append("<li>Appended Item</li>");
                 });
+                $("#btn5").click(function() {
+                    $("img").before("<b>Before</b>");
+                });
+                $("#btn6").click(function() {
+                    $("img").after("<i>After</i>");
+                });
             })
             function appendText() {
                 var text1 = "<p>Text.";
@@ -23,6 +29,13 @@
                 text2.innerText = "Text."
                 var text3 = $("<p></p>").text("Text.");
                 $("body").append(text1, text2, text3);
+            }
+            function afterText() {
+                var text1 = "<b>I </b>";
+                var text2 = $("<i></i>").text("love ");
+                var text3 = document.createElement("big");
+                text3.innerText = "jQuery!";
+                $("img").after(text1, text2, text3);
             }
         </script>
     </head>
@@ -38,6 +51,12 @@
         <input type="button" id="btn2" value="追加文本">
         <input type="button" id="btn3" value="添加表项">
         <input type="button" id="btn4" value="追加表项">
+        <br>
+        <img src="images/1.jpeg">
+        <br>
+        <input type="button" id="btn5" value="在图片前添加文本">
+        <input type="button" id="btn6" value="在图片后添加文本">
+        <input type="button" onclick="afterText()" value="在图片后添加多个文本">
         <br>
         <input type="button" onclick="appendText()" value="追加文本">
     </body>
