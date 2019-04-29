@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+        <style>
+            .blue {
+                color: blue;
+            }
+            .import {
+                font-weight: bold;
+                font-size: xx-large;
+            }
+        </style>
+        <script>
+            $(document).ready(function() {
+                $("#btn1").click(function() {
+                    $("h1, h2, p").addClass("blue");
+                    $("div").addClass("import");
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <h1>标题 1</h1>
+        <h2>标题 2</h2>
+        <p>这是一个段落</p>
+        <p>这是另一个段落</p>
+        <div>
+            这是非常重要的文本
+        </div>
+        <input type="button" id="btn1" value="向元素添加类">
+    </body>
+</html>
