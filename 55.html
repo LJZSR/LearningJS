@@ -16,8 +16,11 @@
                 $("#btn1").click(function() {
                     $("h1, h2, p").addClass("blue");
                     $("div").addClass("import");
+                });
+                $("#btn2").click(function() {
+                    $("h1, h2, p, div").removeClass();
                 })
-            })
+            });
         </script>
     </head>
     <body>
@@ -29,5 +32,6 @@
             这是非常重要的文本
         </div>
         <input type="button" id="btn1" value="向元素添加类">
+        <input type="button" id="btn2" value="从元素上删除类">
     </body>
 </html>
