@@ -19,6 +19,9 @@
                 });
                 $("#btn2").click(function() {
                     $("h1, h2, p, div").removeClass();
+                });
+                $("#btn3").click(function() {
+                    $("h1, h2, p, div").toggleClass("blue");
                 })
             });
         </script>
@@ -33,5 +36,6 @@
         </div>
         <input type="button" id="btn1" value="向元素添加类">
         <input type="button" id="btn2" value="从元素上删除类">
+        <input type="button" id="btn3" value="切换CSS类">
     </body>
 </html>
