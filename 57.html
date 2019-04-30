@@ -8,12 +8,24 @@
                     var txt = "Width: " + $("#div1").width() + "<br>";
                     txt += "Height: " + $("#div1").height();
                     $("#div1").html(txt);
+                });
+                $("#btn2").click(function() {
+                    var txt = "innerWidth: " + $("#div1").innerWidth() + "<br>";
+                    txt += "innerHeight: " + $("#div1").innerHeight();
+                    $("#div1").html(txt);
+                });
+                $("#btn3").click(function() {
+                    var txt = "outerWidth: " + $("#div1").outerWidth() + "<br>";
+                    txt += "outerHeight: " + $("#div1").outerHeight();
+                    $("#div1").html(txt);
                 })
             })
         </script>
     </head>
     <body>
         <div id="div1" style="height: 100px; width: 300px; padding: 10px; border: 1px solid black; background-color: lightblue"></div>
-        <input type="button" id="btn1" value="现实div尺寸">
+        <input type="button" id="btn1" value="显示div尺寸">
+        <input type="button" id="btn2" value="显示div尺寸">
+        <input type="button" id="btn3" value="显示div尺寸">
     </body>
 </html>
