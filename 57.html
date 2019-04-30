@@ -18,14 +18,20 @@
                     var txt = "outerWidth: " + $("#div1").outerWidth() + "<br>";
                     txt += "outerHeight: " + $("#div1").outerHeight();
                     $("#div1").html(txt);
+                });
+                $("#btn4").click(function() {
+                    var txt = "outerWidth: " + $("#div1").outerWidth(true) + "<br>";
+                    txt += "outerHeight: " + $("#div1").outerHeight(true);
+                    $("#div1").html(txt);
                 })
             })
         </script>
     </head>
     <body>
-        <div id="div1" style="height: 100px; width: 300px; padding: 10px; border: 1px solid black; background-color: lightblue"></div>
+        <div id="div1" style="height: 100px; width: 300px; padding: 10px; margin: 10px; border: 1px solid black; background-color: lightblue"></div>
         <input type="button" id="btn1" value="显示div尺寸">
         <input type="button" id="btn2" value="显示div尺寸">
         <input type="button" id="btn3" value="显示div尺寸">
+        <input type="button" id="btn4" value="显示div尺寸">
     </body>
 </html>
