@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+        <style>
+            body * {
+                color: lightgrey;
+                border: 2px solid lightgrey;
+                margin: 15px;
+                padding: 5px;
+                display: block;
+            }
+        </style>
+        <script>
+            $(document).ready(function() {
+                $("h2").siblings().css({
+                    "color": "red",
+                    "border": "2px solid red",
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            div
+            <p>p</p>
+            <span>span</span>
+            <h2>h2</h2>
+            <p>p</p>
+            <span>span</span>
+        </div>
+    </body>
+</html>
