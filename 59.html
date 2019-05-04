@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+        <style>
+            .ancestors *
+            { 
+                display: block;
+                border: 2px solid lightgrey;
+                color: lightgrey;
+                padding: 5px;
+                margin: 15px;
+            }
+        </style>
+        <script>
+            $(document).ready(function() {
+                $("span").parents().css({
+                    "color": "red",
+                    "border": "2px solid red",
+                });
+                $("span").parentsUntil("div").css({
+                    "color": "blue",
+                    "border": "2px solid blue",
+                });
+            })
+        </script>
+    </head>
+    <body class="ancestors">body 
+        <div style="width: 500px;">div
+            <ul>ul
+                <li>li
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+
+    </body>
+</html>
