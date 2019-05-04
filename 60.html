@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+        <style>
+            .descendants * {
+                color: lightgrey;
+                display: block;
+                border: 2px solid lightgrey;
+                padding: 5px;
+                margin: 15px;
+            }
+        </style>
+        <script>
+            $(document).ready(function() {
+                $("div").children().css({
+                    "color": "red",
+                    "border": "2px solid red",
+                });
+                $("div").children("p.1").css({
+                    "color": "blue",
+                    "border": "2px solid blue",
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <div class="descendants" style="width: 500px">
+            div
+            <p class="1">
+                p
+                <span>span</span>
+            </p>
+            <p class="2">
+                p
+                <span>span</span>
+            </p>
+        </div>
+    </body>
+</html>
