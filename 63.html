@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("p").filter(".intro").css({
+                    "background-color": "yellow",
+                });
+                $("p").not(".intro").css({
+                    "background-color": "blue",
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <h1>欢迎来到我的主页</h1>
+        <p>我是唐老鸭</p>
+        <p class="intro">我住在 Duckburg</p>
+        <p class="intro">我爱 Duckburg</p>
+        <p>我最好的朋友是Mickey</p>
+    </body>
+</html>
