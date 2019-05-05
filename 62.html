@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("div p").first().css({
+                    "background-color": "yellow",
+                });
+                $("div p").last().css({
+                    "background-color": "green",
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>欢迎来到我的主页</h1>
+        <div>
+            <p>这是div中的一个段落</p>
+        </div>
+        <div>
+            <p>这是div中的另一个段落</p>
+        </div>
+        <p>这也是段落</p>
+    </body>
+</html>
