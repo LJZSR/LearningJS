@@ -5,7 +5,7 @@
         <script>
             $(document).ready(function() {
                 $("#btn1").click(function() {
-                    $.get("example/demo_test.asp", function(data, status) {
+                    $.get("/example/demo_test.asp", function(data, status) {
                         alert("Data: " + data + "\nStatus: " + status);
                     });
                 });
