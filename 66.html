@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="/jquery/jquery-1.11.1.min.js"></script>
+        <script src="/js/jquery-3.4.0.js"></script>
         <script>
             $(document).ready(function(){
                 $("button").click(function(){
-                    $.post("/example/demo_test_post.asp",
+                    $.post("127.0.0.1:5500/example/demo_test_post.asp",
                     {
                         name:"Donald Duck",
                         city:"Duckburg"
