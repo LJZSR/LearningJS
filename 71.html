@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        var o = {
+            name: 'Jack',
+            age: 20,
+            city: 'Beijin',
+        }
+        for (var key in o) {
+            console.log(key)
+        }
+        for (var key in o) {
+            if (o.hasOwnProperty(key)) {
+                console.log(key);
+            }
+        }
+    </script>
+</html>
