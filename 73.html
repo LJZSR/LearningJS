@@ -13,6 +13,15 @@
         for (var x of m) {
             console.log(x[0]+"="+x[1]);
         }
-        
+        a.name = 'Hello';
+        a.forEach(function(value, index, array) {
+            console.log(value+', index='+index);    
+        })
+        s.forEach(function(value) {
+            console.log(value);
+        })
+        m.forEach(function(value, key) {
+            console.log(key+':'+value);
+        })
     </script>
 </html>
