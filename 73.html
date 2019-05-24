@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <script>
-        var a = ['A', 'B','C'];
-        var s = new Set(['A', 'B', 'C']);
-        var m = new Map([[1,'x'],[2,'Y'],[3,'Z']]);
-        for (var x of a) {
-            console.log(x);
-        }
-        for (var x of s) {
-            console.log(x)
-        }
-        for (var x of m) {
-            console.log(x[0]+"="+x[1]);
-        }
-        a.name = 'Hello';
-        a.forEach(function(value, index, array) {
-            console.log(value+', index='+index);    
-        })
-        s.forEach(function(value) {
-            console.log(value);
-        })
-        m.forEach(function(value, key) {
-            console.log(key+':'+value);
-        })
-    </script>
+    <head>
+        <script>
+            var a = ['A', 'B','C'];
+            var s = new Set(['A', 'B', 'C']);
+            var m = new Map([[1,'x'],[2,'Y'],[3,'Z']]);
+            for (var x of a) {
+                console.log(x);
+            }
+            for (var x of s) {
+                console.log(x)
+            }
+            for (var x of m) {
+                console.log(x[0]+"="+x[1]);
+            }
+            a.name = 'Hello';
+            a.forEach(function(value, index, array) {
+                console.log(value+', index='+index);    
+            })
+            s.forEach(function(value) {
+                console.log(value);
+            })
+            m.forEach(function(value, key) {
+                console.log(key+':'+value);
+            })
+        </script>
+    </head>
 </html>
