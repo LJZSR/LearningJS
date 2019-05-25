@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function foo(x) {
+                console.log('x = ' + x);
+                for (var i=0; i<arguments.length; ++i) {
+                    console.log('arg ' + i + ' = ' +arguments[i])
+                }
+            }
+            foo(10,20,30);
+        </script>
+    </head>
+</html>
