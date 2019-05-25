@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function foo(a, b, ...rest) {
+                console.log('a = ' + a);
+                console.log('b = ' + b);
+                console.log(rest);
+            }
+            function sum(...rest) {
+                var counter = 0;
+                for (var x=0; x<rest.length; ++x) {
+                    counter += rest[x];
+                }
+                return counter;
+            }
+            foo(1,2);
+            foo(1);
+            sum(1);
+        </script>
+    </head>
+</html>
