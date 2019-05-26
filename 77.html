@@ -14,6 +14,20 @@
             var a = ['hello', ['JavaScript', 'SE6']];
             let [x, [y, z]] = a;
             console.log('x = ' + x + ', y = ' + y + ', z = ' + z);
+            person = {
+                name: '小明',
+                age: 20,
+                gender: 'male',
+                passport: 'G-12345678',
+                school: 'No.4 middle school',
+                address: {
+                    city: 'Beijin',
+                    street: 'No.1 road',
+                    zipcode: '100001',
+                }
+            }
+            var {name, passport:id, address:{city, street}, school} = person;
+            console.log('name = ' + name + ', passport = ' + id + ', school = ' + school + ', city = ' + city);
         </script>
     </head>
 </html>
