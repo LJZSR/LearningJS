@@ -12,6 +12,12 @@
                 bar();
             }
             foo();
+            window.alert('调用window.aler()');
+            var old_alert = window.alert;
+            window.alert = function() {};
+            alert('无法用alert()显示');
+            window.alert = old_alert;
+            alert('有可以调用alert()了');
         </script>
     </head>
 </html>
