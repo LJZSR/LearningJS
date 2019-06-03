@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function parseInt(x) {
+                return x-'0'
+            }
+            function pow(x) {
+                return x*x;
+            }
+            function biToInt (x, y) {
+                return 10*x+y;
+            }
+            function stringToInt (s) {
+                var tmp = s.map(parseInt);
+                return tmp.reduce(biToInt);
+            }
+            var arr = [1,2,3,4,5,6,7,9,];
+            var str = ['1','2','3','4'];
+            var result = arr.map(pow);
+            console.log(result);
+            console.log(arr.map(String));
+            console.log(str.map(parseInt));
+            console.log(stringToInt(str));
+        </script>
+    </head>
+</html>
