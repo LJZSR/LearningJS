@@ -4,10 +4,26 @@
         <script>
             var arr = ['apple', 'strawberry', 'banana', 'pear', 'apple', 'orange', 'orange', 'strawberry'];
             var r;
+            function get_primes(arr) {
+                var tmp;
+                tmp = arr.filter(function(value) {
+                    if (value===1) return false;
+                    if (value===2) return true;
+                    for (var i=2; i<=Math.sqrt(value); ++i) if (value%i===0) return false;
+                    return true;
+                });
+                return tmp;
+            }
             r = arr.filter(function(value, index, self) {
                 return self.indexOf(value) === index;
             });
             console.log(r);
+            var x;
+            var arr1 = new Array;
+            for (x=1; x<100; ++x) {
+                arr1.push(x);
+            }
+            console.log(get_primes(arr1));
         </script>
     </head>
 </html>
