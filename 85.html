@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function lazy_sum(arr) {
+                var sum = function() {
+                    return arr.reduce(function(x, y){
+                        return x + y;
+                    })
+                }
+                return sum;
+            }
+            var f = lazy_sum([1,2,3,4]);
+            console.log(f());
+        </script>
+    </head>
+</html>
