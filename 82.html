@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var arr = ['apple', 'strawberry', 'banana', 'pear', 'apple', 'orange', 'orange', 'strawberry'];
+            var r;
+            r = arr.filter(function(value, index, self) {
+                return self.indexOf(value) === index;
+            });
+            console.log(r);
+        </script>
+    </head>
+</html>
