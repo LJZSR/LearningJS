@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <script>
+            function create_counter(initial) {
+                var x = initial || 0;
+                return {
+                    inc: function() {
+                        return x += 1;
+                    },
+                };
+            }
+            var c1 = create_counter();
+            console.log(c1.inc());
+            console.log(c1.inc());
+            var c2 = create_counter(10);
+            console.log(c2.inc());
+            console.log(c2.inc());
+        </script>
     </head>
 </html>
