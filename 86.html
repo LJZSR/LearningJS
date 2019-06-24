@@ -1,4 +1,25 @@
 <!DOCTYPE html>
 <html>
-    
+    <head>
+        <script>
+            function count() {
+                var arr = [];
+                for (var i=0; i<3; ++i) {
+                    arr.push((function(n) {
+                        return function () {
+                            return n*n;
+                        }
+                    })(i));
+                }
+                return arr;
+            }
+            var result = count();
+            f1 = result[0];
+            f2 = result[1];
+            f3 = result[2];
+            console.log(f1());
+            console.log(f2());
+            console.log(f3());
+        </script>
+    </head>
 </html>
