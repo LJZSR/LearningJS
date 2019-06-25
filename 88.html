@@ -14,9 +14,18 @@
                 }
                 return sum;
             }
+            var obj = {
+                birth: 1990,
+                getAge: function() {
+                    var b = this.birth;
+                    var fn = () => new Date().getFullYear() - this.birth;
+                    return fn();
+                }
+            }
             console.log(fn1(2));
             console.log(fn2(-3));
             console.log(fn3(1,2,3,4,5));
+            console.log(obj.getAge());
         </script>
     </head>
 </html>
