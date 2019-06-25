@@ -2,8 +2,13 @@
 <html>
     <head>
         <script>
-            var fn = x => x * x;
-            console.log(fn(2));
+            var fn1 = x => x * x;
+            var fn2 = x => {
+                if (x>0) return x*x;
+                else return -1*x*x;
+            }
+            console.log(fn1(2));
+            console.log(fn2(-3));
         </script>
     </head>
 </html>
