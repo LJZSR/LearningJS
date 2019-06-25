@@ -7,8 +7,16 @@
                 if (x>0) return x*x;
                 else return -1*x*x;
             }
+            var fn3 = (x, y, ...rest) => {
+                var sum = x + y;
+                for (var i=0; i<rest.length; ++i) {
+                    sum += rest[i];
+                }
+                return sum;
+            }
             console.log(fn1(2));
             console.log(fn2(-3));
+            console.log(fn3(1,2,3,4,5));
         </script>
     </head>
 </html>
