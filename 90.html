@@ -2,7 +2,16 @@
 <html>
     <head>
         <script>
-            
+            function* next_id(initial) {
+                var x = initial || 0;
+                while (true) {
+                    ++x;
+                    yield x;
+                }
+            }
+            var c1 = next_id();
+            console.log(c1.next().value);
+            console.log(c1.next().value);
         </script>
     </head>
 </html>
