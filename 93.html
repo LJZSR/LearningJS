@@ -2,6 +2,12 @@
 <html>
     <head>
         <script>
+            function convert(key, value) {
+                if (typeof value === "string") {
+                    return value.toUpperCase();
+                }
+                return value;
+            }
             var xiaoming = {
                 name: "小明",
                 age: 14,
@@ -17,7 +23,9 @@
                 ]
             }
             console.log(JSON.stringify(xiaoming));
-            console.log(JSON.stringify(xiaoming, null, "    "))
+            console.log(JSON.stringify(xiaoming, null, "    "));
+            console.log(JSON.stringify(xiaoming, ['name', 'skills'], '  '));
+            console.log(JSON.stringify(xiaoming, convert, "    "));
         </script>
     </head>
 </html>
