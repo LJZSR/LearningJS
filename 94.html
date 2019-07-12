@@ -13,9 +13,12 @@
                 name: '小明',
             }
             function createStudent(name) {
-                
+                var s = Object.create(Student);
+                s.name = name;
+                return s;
             }
             xiaoming.__proto__ = Student;
+            var xiaowang = createStudent("小王");
         </script>
     </head>
 </html>
