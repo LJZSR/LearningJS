@@ -4,9 +4,9 @@
         <script>
             function Student(name) {
                 this.name = name;
-                this.hello  = function () {
-                    console.log('Hello, ' + this.name);
-                }
+            }
+            Student.prototype.hello = function() {
+                alert("Hello, " + this.name);
             }
             var xiaoming = new Student("小明");
         </script>
