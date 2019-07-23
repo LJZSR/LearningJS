@@ -2,7 +2,14 @@
 <html>
     <head>
         <script>
-            
+            function Cat(name) {
+                this.name = name;
+            }
+            Cat.prototype.say = function() {
+                return "Hello, " + this.name; 
+            }
+            var kitty = new Cat('Kitty');
+            var doraemon = new Cat('哆啦A梦');
         </script>
     </head>
 </html>
