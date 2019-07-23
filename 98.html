@@ -2,6 +2,31 @@
 <html>
     <head>
         <script>
+            function Student(props) {
+                this.name = props.name;
+            }
+            Student.prototype.say = function() {
+                alert("Hello, " + this.name + "!");
+            }
+            function PrimaryStudent(props) {
+                Student.call(this, props);
+                this.grade = props.grade;
+            }
+            function F() {
+
+            }
+            F.prototype = Student.prototype;
+            PrimaryStudent.prototype = new F();
+            PrimaryStudent.prototype.constructor = PrimaryStudent;
+            PrimaryStudent.prototype.getGrade = function() {
+                return this.grade;
+            }
+            var xiaoming = new PrimaryStudent({
+                name: "小明",
+                grade: 2,
+            })
+
+
         </script>
     </head>
 </html>
