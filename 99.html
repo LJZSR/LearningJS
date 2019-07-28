@@ -2,7 +2,24 @@
 <html>
     <head>
         <script>
-            
+            class Student {
+                constructor(name) {
+                    this.name = name;
+                }
+                hello() {
+                    alert("Hello, " + this.name + "!");
+                }
+            }
+            class PrimaryStudent extends Student {
+                constructor(name, grade=1) {
+                    super(name);
+                    this.grade = grade;
+                }
+                myGrade() {
+                    alert("I'm at grade " + this.grade + "!"); 
+                }
+            }
+            var xiaoming = new PrimaryStudent("小明", 2);
         </script>
     </head>
 </html>
