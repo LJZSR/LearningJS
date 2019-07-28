@@ -12,12 +12,13 @@
                 Student.call(this, props);
                 this.grade = props.grade;
             }
-            function F() {
-
+            function inherits(Child, Parents) {
+                var F = function () {};
+                F.prototype = Parents.prototype;
+                Child.prototype = new F();
+                Child.prototype.constructor = Child;
             }
-            F.prototype = Student.prototype;
-            PrimaryStudent.prototype = new F();
-            PrimaryStudent.prototype.constructor = PrimaryStudent;
+            inherits(PrimaryStudent, Student);
             PrimaryStudent.prototype.getGrade = function() {
                 return this.grade;
             }
