@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        
+    </head>
     <body>
         <div id="list">
             <p id="java">Java</p>
@@ -12,7 +15,11 @@
             var haskell = document.createElement("p");
             haskell.id = "haskell";
             haskell.innerText = "Haskell";
-            list.append(haskell);
+            list.appendChild(haskell);
+            var d = document.createElement("style");
+            d.setAttribute("type", "text/css");
+            d.innerHTML = "p {color: red}";
+            document.getElementsByTagName("head")[0].appendChild(d);
         </script>
     </body>
 </html>
