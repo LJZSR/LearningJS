@@ -5,7 +5,7 @@
         <p id="test-jsonp"></p>
         <p><button onclick="getPrice()">刷新</button></p>
         <script>
-            function refreshPrice(data) {
+            function refresh(data) {
                 var p = document.getElementById('test-jsonp');
                 p.innerHTML = '当前价格：' +
                     data['0000001'].name +': ' + 
@@ -17,7 +17,7 @@
                 var
                     js = document.createElement('script'),
                     head = document.getElementsByTagName('head')[0];
-                js.src = 'http://api.money.126.net/data/feed/0000001,1399001?callback=refreshPrice';
+                js.src = 'http://api.money.126.net/data/feed/0000001,1399001?callback=refresh';
                 head.appendChild(js);
             }
         </script>
