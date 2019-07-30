@@ -29,6 +29,16 @@
                     log("Get value: " + result);
                 })
             }
+            //Promise.all()
+            var p1 = new Promise(function (resolve, reject) {
+                setTimeout(resolve, 500, 'P1');
+            });
+            var p2 = new Promise(function (resolve, reject) {
+                setTimeout(resolve, 2000, 'P2');
+            });
+            Promise.all([p1, p2]).then(function (results) {
+                console.log(results);
+            });
         </script>
     </head>
     <body>
