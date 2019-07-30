@@ -22,13 +22,11 @@
                     }
                 }, 1000*timeOut);
             }
-            var p1 = new Promise(test);
-            var p2 = p1.then(function(result) {
+            var p1 = new Promise(test).then(function(result) {
                 console.log("Success: " + result);
-            })
-            var p3 = p2.catch(function(result) {
+            }).catch(function(result) {
                 console.log("Failure: " + result);
-            })
+            });
         </script>
     </head>
 </html>
