@@ -8,6 +8,27 @@
             console.log("before setTimeout()");
             setTimeout(callback, 1000);
             console.log("after setTimeout()");
+            function test(resolve, reject) {
+                var timeOut = Math.random() * 2;
+                console.log("Set timeout to: " + timeOut + " seconds.");
+                setTimeout(function() {
+                    if (timeOut < 1) {
+                        console.log("Call resolve()...");
+                        resolve("200 OK");
+                    }
+                    else {
+                        console.log("Call reject()...");
+                        reject("Timeout in " + timeOut + " seconds.");
+                    }
+                }, 1000*timeOut);
+            }
+            var p1 = new Promise(test);
+            var p2 = p1.then(function(result) {
+                console.log("Success: " + result);
+            })
+            var p3 = p2.catch(function(result) {
+                console.log("Failure: " + result);
+            })
         </script>
     </head>
 </html>
