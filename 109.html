@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <canvas id="test-canvas" width="200" heigth="100">
+        <canvas id="test-canvas-1" width="200" heigth="100">
+            <p>你的浏览器不支持Canvas</p>
+        </canvas>
+        <canvas id="test-canvas-2" width="200" heigth="100">
             <p>你的浏览器不支持Canvas</p>
         </canvas>
         <script>
-            var canvas = document.getElementById("test-canvas");
+            var canvas = document.getElementById("test-canvas-1");
             ctx = canvas.getContext("2d");
             ctx.clearRect(0, 0, 200, 200);
             ctx.fillStyle = "#dddddd";
             ctx.fillRect(10, 10, 130, 130);
+            var path = new Path2D();
+            path.arc(75, 75, 50, 0, Math.PI*2,  true);
+            path.moveTo(110, 75);
+            path.arc(75, 75, 35, 0, Math.PI, false);
+            path.moveTo(65, 65);
+            path.arc(60, 65, 5, 0, Math.PI*2, true);
+            path.moveTo(95, 65);
+            path.arc(90, 65, 5, 0, Math.PI*2, true);
+            ctx.strokeStyle = '#0000ff';
+            ctx.stroke(path);
+            var canvas = document.getElementById("test-canvas-2");
+            ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
         </script>
     </body>
 </html>
