@@ -1,10 +1,130 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <script>
+            function getDate() {
+                var js = document.createElement('script');
+                js.src = 'http://img1.money.126.net/data/hs/kline/day/history/2019/0000001.json?callback=loadStockData&t=' + Date.now();
+                document.getElementsByTagName('head')[0].appendChild(js);
+            }
+            function loadStockData(r) {
+                var
+                    NUMS = 30,
+                    data = r.data;
+                console.log("data.length: " + data.length);
+                if (data.length > NUMS) {
+                    data = data.slice(data.length - NUMS);
+                }
+                console.log("data.length: " + data.length);
+                data = data.map(function (x) {
+                    return {
+                        date: x[0],
+                        open: x[1],
+                        close: x[2],
+                        high: x[3],
+                        low: x[4],
+                        vol: x[5],
+                        change: x[6]
+                    };
+                });
+                drawStock(data);
+            }
+            function drawStock(data) {
+                canvas = document.getElementById('stock-canvas'),
+                width = canvas.width,
+                height = canvas.height,
+                ctx = canvas.getContext('2d');
+                console.log(JSON.stringify(data[29])); // {"date":"20150602","open":4844.7,"close":4910.53,"high":4911.57,"low":4797.55,"vol":62374809900,"change":1.69}
+                ctx.clearRect(0, 0, width, height);
+                //ctx.fillText('Test Canvas', 10, 10);
+                ctx.fillStyle = "#000000";  //背景设为黑色
+                ctx.fillRect(0, 0, width, height);
+                //开始取所有数据中的最小值
+                low = data[0].low;  //给low赋初始值
+                high = data[0].high;    //给high赋初始值
+                for (var i = 1; i < data.length; i++) {     //遍历数组
+                    low = data[i].low < low ? data[i].low : low;    //保证low是最小的
+                    high = data[i].high > high ? data[i].high : high; //保证high是最大的
+                }
+
+                //Y坐标的起始值,取0.05的系数保留空白
+                height_start = height * 0.05;
+
+                //股票点数变化值(Y坐标最大和最小之间的差值)和盒子像素(0.9的系数,上下各留0.05)的比值
+                scale = (high - low) / (height * 0.9);
+
+                //汉字中  竖线左边半个口的宽度,  这里width乘了系数0.3
+                //因为我是这样分配的:整个canvas的盒子宽度为1, 左边预留0.05, 中字中间的一竖是1个像素, 
+                // 整个口字的宽度占0.6(半个口字就是0.3), 口字与口字之间的宽度占0.2
+                //所以我计算宽度的分配是这样的  半个口+1像素+半个口+空白+半个口+1像素+半个口+空白.....
+                width_half_k = Math.round((width * 0.30) / data.length);
+                //空白的像素,空白比元素个数少一个
+                k_blank = Math.round((width * 0.2) / (data.length - 1));
+                //左边保留的像素的宽度
+                width_start = Math.round(width * 0.05);
+
+                //开始画图
+                for (var i = 0; i < data.length; i++) {
+                    //先来画中间的竖线
+
+                    //中字中间竖线的x坐标,开始是左边保留的像素个数,加上半个口的宽度即第一条线的x坐标
+                    //以后的每条线,就每次往后加上 (1像素线宽,半个口,空白,半个口)
+                    line_x = width_start + width_half_k + i * (1 + width_half_k * 2 + k_blank);
+                    //中字 最下边一点的Y坐标,因为height_start对应着high,所以就是height_start+两个值之差的绝对值再除以系数
+                    //这里有点逻辑会有点乱,因为对于Y坐标来说,是从坐上往下递增的,而对于股票点数来说是从下往上递增
+                    y_low = Math.round(height_start + Math.abs(data[i].low - high) / scale);
+                    //同样的方法计算高点对应的Y坐标
+                    y_high = Math.round(height_start + Math.abs(data[i].high - high) / scale);
+
+                    //取画线的起始Y坐标,因为股票点数高的肯定在上边,所以去y_high坐标
+                    line_y = y_high;
+                    //要画的线的高度
+                    line_high = Math.abs(y_low - y_high);
+                    //线的宽度
+                    line_width = 1;
+
+                    //画线中间的口字,可以将其视为一个盒子
+
+                    //计算盒子的左上角的X坐标,第一个是保留的width_start,之后的每次往后加两个半口字,加1像素,加留白
+                    box_x = width_start + (i * (width_half_k * 2 + 1 + k_blank));
+                    //计算open值对应的Y坐标
+                    y_open = Math.round(height_start + Math.abs(data[i].open - high) / scale);
+                    //计算close值对应的Y坐标
+                    y_close = Math.round(height_start + Math.abs(data[i].close - high) / scale);
+                    //最小的Y坐标才是左上角盒子的Y坐标
+                    box_y = y_open < y_close ? y_open : y_close;
+                    //盒子的高度
+                    box_high = Math.abs(y_open - y_close);
+                    //盒子的宽度,两个半口字,加1像素
+                    box_width = width_half_k * 2 + line_width;
+
+                    //判断颜色
+                    if (data[i].open >= data[i].close) {
+                        ctx.fillStyle = "#dc0000";
+                    }
+                    else {
+                        ctx.fillStyle = "#1caa3d";
+                    }
+                    //画线
+                    ctx.fillRect(line_x, line_y, line_width, line_high);
+                    //画盒子
+                    ctx.fillRect(box_x, box_y, box_width, box_high);
+
+                }
+            }
+        </script>
+    </head>
     <body>
         <canvas id="test-canvas-1" width="200" heigth="100">
             <p>你的浏览器不支持Canvas</p>
         </canvas>
         <canvas id="test-canvas-2" width="200" heigth="100">
+            <p>你的浏览器不支持Canvas</p>
+        </canvas>
+        <br/>
+        <button onclick="getDate()">Run</button>
+        <br/>
+        <canvas id="stock-canvas" width="500" heigth="500">
             <p>你的浏览器不支持Canvas</p>
         </canvas>
         <script>
@@ -26,7 +146,13 @@
             var canvas = document.getElementById("test-canvas-2");
             ctx = canvas.getContext("2d");
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            ctx.shadowBlur = 2;
+            ctx.shadowColor = '#666666';
+            ctx.font = '24px Arial';
+            ctx.fillStyle = '#333333';
+            ctx.fillText('带阴影的文字', 20, 40);
         </script>
     </body>
 </html>
