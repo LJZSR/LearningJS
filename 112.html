@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+        <script>
+            function getJson() {
+                var json = null;
+                json = {
+                    Name: $("#test-form input[name = 'name']")[0].value,
+                    Email: $("#test-form input[name = 'email']")[0].value,
+                    Password: $("#test-form input[name = 'password']")[0].value,
+                    Gender: $("#test-form input[name = 'gender']")[0].value,
+                    City: $("#test-form select[name = 'city']")[0].value,
+                }
+                json = JSON.stringify(json);
+                console.log(json);
+            }
+        </script>
+    </head>
+    <body>
+        <form id="test-form" action="" onsubmit="return false;">
+            <p><label>Name: <input name="name"></label></p>
+            <p><label>Email: <input name="email"></label></p>
+            <p><label>Password: <input name="password" type="password"></label></p>
+            <p>Gender: <label><input name="gender" type="radio" value="m" checked> Male</label> <label><input name="gender" type="radio" value="f"> Female</label></p>
+            <p><label>City: <select name="city">
+                <option value="BJ" selected>Beijing</option>
+                <option value="SH">Shanghai</option>
+                <option value="CD">Chengdu</option>
+                <option value="XM">Xiamen</option>
+            </select></label></p>
+            <p><button type="submit" onclick="getJson()">Submit</button></p>
+        </form>
+    </body>
+</html>
