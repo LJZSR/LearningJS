@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+        <style>
+            .highlight {
+                color: #dd1144;
+                background-color: #ffd351;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="test-css">
+            <li class="lang dy"><span>JavaScript</span></li>
+            <li class="lang"><span>Java</span></li>
+            <li class="lang dy"><span>Python</span></li>
+            <li class="lang"><span>Swift</span></li>
+            <li class="lang dy"><span>Scheme</span></li>
+        </ul>
+        <div id="test-highlight-css">
+            <ul>
+                <li class="py"><span>Python</span></li>
+                <li class="js"><span>JavaScript</span></li>
+                <li class="sw"><span>Swift</span></li>
+                <li class="hk"><span>Haskell</span></li>
+            </ul>
+        </div>
+        <script>
+            $("#test-css li.dy span").css('background-color', '#ffd351').css('color', 'red');
+            var div = $("#test-highlight-css");
+            div.find("li.js").addClass("highlight");
+        </script>
+    </body>
+</html>
