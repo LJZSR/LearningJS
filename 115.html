@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+    </head>
+    <body>
+        <input id="test-radio" type="radio" name="test" checked value="1">
+        <input id="test-input" name="email" value="">
+        <select id="test-select" name="city">
+            <option value="BJ" selected>Beijing</option>
+            <option value="SH">Shanghai</option>
+            <option value="SZ">Shenzhen</option>
+        </select>
+        <textarea id="test-textarea">Hello</textarea>
+        <script>
+            var radio = $("#test-radio");
+            console.log(radio.attr("id"));
+            console.log(radio.attr("type"));
+            console.log(radio.attr("name"));
+            console.log(radio.attr("checked"));
+            console.log(radio.prop("checked"));
+            console.log(radio.is(":checked"));
+            console.log(radio.attr("value"));
+            var input = $("#test-input");
+            var select = $("#test-select");
+            var textarea = $("#test-textarea");
+            console.log(input.val());
+            input.val("502971630@qq.com");
+            console.log(select.val());
+            select.val("SH")
+            console.log(textarea.val());
+            textarea.val("Hi");
+        </script>
+    </body>
+    
+</html>
