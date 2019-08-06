@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+    </head>
+    <body>
+        <ul id="test-ul">
+            <li class="js">JavaScript</li>
+            <li name="book">Java &amp; JavaScript</li>
+        </ul>
+        <script>
+            js = $("#test-ul li");
+            js1 = $("#test-ul li[name = book]");
+            js2 = $("#test-ul .js");
+            js.text("js");
+            js1.text("Java & ECMAScript");
+            js2.html("<span style = 'color: red'>JavaScript</span>");
+            
+        </script>
+    </body>
+</html>
