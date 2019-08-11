@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+    </head>
+    <body>
+        <div id="test-div">
+            <ul>
+                <li><span>JavaScript</span></li>
+                <li><span>Python</span></li>
+                <li><span>Swift</span></li>
+            </ul>
+        </div>
+        <script>
+            var li = $("#test-div ul li");
+            var text = [];
+            for (var i = 0; i<li.length; ++i) {
+                text.push(li[i].innerText);
+            }
+            text.push("Pascal");
+            text.push("Lua");
+            text.push("Ruby");
+            text.sort();
+            var ul = $("#test-div ul");
+            li.remove();
+            for (var i = 0; i<text.length; ++i) {
+                ul.append("<li><span>" + text[i] + "</span></li>");
+            }
+        </script>
+    </body>
+</html>
