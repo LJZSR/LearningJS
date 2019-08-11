@@ -2,6 +2,17 @@
 <html>
     <head>
         <script src="js/jquery-3.4.0.js"></script>
+        <script>
+            $(function () {
+                console.log("init A...");
+            })
+            $(function() {
+                console.log("init B...");
+            })
+            $(function() {
+                console.log("init C...");
+            })
+        </script>
     </head>
     <body>
         <a id="test-link" href="#0">点我试试</a>
