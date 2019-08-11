@@ -16,9 +16,14 @@
     </head>
     <body>
         <a id="test-link" href="#0">点我试试</a>
+        <p>Mousemove: <span id="testMouseMoveSpan"></span></p>
+        <div style="height: 100px; width: 200px; border: 1px solid black;" id="testMouseMoveDiv"></div>
         <script>
             $("#test-link").click(function() {
                 alert("Hello!");
+            })
+            $("#testMouseMoveDiv").mousemove(function(e) {
+                $("#testMouseMoveSpan").text("pageX = " + e.pageX + ", pageY = " + e.pageY);
             })
         </script>
     </body>
