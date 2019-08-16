@@ -12,14 +12,20 @@
             $(function() {
                 console.log("init C...");
             })
+            $(function() {
+                $("#test-input").change(function() {
+                    alert("Change!");
+                })
+            })
         </script>
     </head>
     <body>
         <a id="test-link" href="#0">点我试试</a>
         <p>Mousemove: <span id="testMouseMoveSpan"></span></p>
-        <div style="height: 100px; width: 200px; border: 1px solid black;" id="testMouseMoveDiv">
+        <div style="height: 100px; width: 200px; border: 1px solid black; margin: auto;" id="testMouseMoveDiv">
             在此区域移动鼠标
         </div>
+        <input type="text" id="test-input">
         <script>
             $("#test-link").click(function() {
                 alert("Hello!");
