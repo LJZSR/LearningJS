@@ -26,12 +26,23 @@
             在此区域移动鼠标
         </div>
         <input type="text" id="test-input">
+        <br>
+        <button id="testPopupButton1">Button1</button>
+        <button id="testPopupButton2">Button2</button>
         <script>
             $("#test-link").click(function() {
                 alert("Hello!");
             })
             $("#testMouseMoveDiv").mousemove(function(e) {
                 $("#testMouseMoveSpan").text("pageX = " + e.pageX + ", pageY = " + e.pageY);
+            })
+            $("#testPopupButton1").click(function() {
+                window.open("/");
+            })
+            $("testPopupButton2").click(function() {
+                setTimeout(function() {
+                    window.open("/");
+                }, 1000);
             })
         </script>
     </body>
