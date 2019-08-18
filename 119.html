@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+        <style>
+            #test-show-hide {
+                width: 100px;
+                height: 100px;
+                background-color: gray;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="test-show-hide"></div>
+        <button id="slow-hide">hide("slow")</button>
+        <button id="slow-show">show("slow")</button>
+        <button id="slow-toggle">toggle("slow")</button>
+        <script>
+            $("#slow-hide").click(function() {
+                $("#test-show-hide").hide(3000);
+            });
+            $("#slow-show").click(function() {
+                $("#test-show-hide").show(3000);
+            });
+            $("#slow-toggle").click(function() {
+                $("#test-show-hide").toggle(3000);
+            })
+        </script>
+    </body>
+</html>
