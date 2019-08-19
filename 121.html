@@ -13,11 +13,20 @@
                 this.css('backgroundColor', '#fffceb').css('color', '#d85030');
                 return this;
             }
-            $.fn.hightlight2 = function(option) {
-                var bgcolor = option && option.backgroundColor || '#fffceb';
-                var color = option && option.color || '#d85030';
+            $.fn.hightlight2 = function(options) {
+                var bgcolor = options && options.backgroundColor || '#fffceb';
+                var color = options && options.color || '#d85030';
                 this.css('backgroundColor', bgcolor).css('color', color);
                 return this;
+            }
+            $.fn.highlight = function(options) {
+                var opts = $.extend({}, $.fn.highlight.defaults, options);
+                this.css('backgroundColor', opts.backgroundColor).css('color', opts.color);
+                return this;
+            }
+            $.fn.highlight.defaults = {
+                color: '#d85030',
+                backgroundColor: '#fff8de',
             }
         </script>
     </head>
@@ -30,12 +39,25 @@
             <p>什么是<span>jQuery</span> <span>Plugin</span></p>
             <p>编写<span>jQuery</span> <span>Plugin</span>可以用来扩展<span>jQuery</span>的功能。</p>
         </div>
+        <div id="test-highlight">
+            <p>如何编写<span>jQuery</span> <span>Plugin</span></p>
+            <p>编写<span>jQuery</span> <span>Plugin</span>，要设置<span>默认值</span>，并允许用户修改<span>默认值</span>，或者运行时传入<span>其他值</span>。</p>
+        </div>
         <script>
             $('#test-highlight1 span').hightlight1();
             $('#test-highlight2 span').hightlight2({
                 backgroundColor: '#00a8e6',
                 color: '#ffffff',
             })
+
+            $.fn.highlight.defaults.color = '#659f13';
+            $.fn.highlight.defaults.backgroundColor = '#f2fae3';
+
+            $('#test-highlight p:first-child span').highlight();
+
+            $('#test-highlight p:last-child span').highlight({
+                color: '#dd1144'
+            });
         </script>
     </body>
 </html>
