@@ -3,7 +3,7 @@
     <head>
         <script src="js/jquery-3.4.0.js"></script>
         <style>
-            #test-show-hide {
+            #test-show-hide, #test-slide, #test-fade, #test-animate{
                 width: 100px;
                 height: 100px;
                 background-color: gray;
@@ -15,6 +15,19 @@
         <button id="slow-hide">hide("slow")</button>
         <button id="slow-show">show("slow")</button>
         <button id="slow-toggle">toggle("slow")</button>
+        <br>
+        <div id="test-slide"></div>
+        <button id="slide-up">slideUp("slow")</button>
+        <button id="slide-down">slideDown("slow")</button>
+        <button id="slide-toggle">slideToggle("slow")</button>
+        <br>
+        <div id="test-fade"></div>
+        <button id="fade-in">fadeIn("slow")</button>
+        <button id="fade-out">fadeOut("slow")</button>
+        <button id="fade-toggle">fadeToggle("slow")</button>
+        <br>
+        <div id="test-animate"></div>
+        <button id="animate">testAnimate</button>
         <script>
             $("#slow-hide").click(function() {
                 $("#test-show-hide").hide(3000);
@@ -24,6 +37,49 @@
             });
             $("#slow-toggle").click(function() {
                 $("#test-show-hide").toggle(3000);
+            });
+            $("#slide-up").click(function() {
+                $("#test-slide").slideUp(3000);
+            });
+            $("#slide-down").click(function() {
+                $("#test-slide").slideDown(3000);
+            });
+            $("#slide-toggle").click(function() {
+                $("#test-slide").slideToggle(3000);
+            });
+            $("#fade-in").click(function() {
+                $("#test-fade").fadeIn(3000);
+            })
+            $("#fade-out").click(function() {
+                $("#test-fade").fadeOut(3000);
+            })
+            $("#fade-toggle").click(function() {
+                $("#test-fade").fadeToggle(3000);
+            });
+            $("#animate").click(function() {
+                $("#test-animate")
+                .animate({
+                    opacity: 0.25,
+                    width: '500px',
+                    height: '500px',
+                }, 5000, function() {
+                    $(this).css('opacity', 1.0).css('width', '100px').css('height', '100px');
+                })
+                .delay(2000)
+                .slideUp(2000)
+                .delay(2000)
+                .slideDown(2000)
+                .animate({
+                    opacity: 0.25,
+                    width: '200px',
+                    height: '200px',
+                }, 2000)
+                .delay(2000)
+                .animate({
+                    opacity: 1.0,
+                    width: '100px',
+                    height: '100px',
+                });
             })
         </script>
     </body>
