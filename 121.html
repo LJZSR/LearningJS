@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /* #test-highlight1 span {
+                background-color: #ddca5a;
+                
+            } */
+        </style>
+        <script src="js/jquery-3.4.0.js"></script>
+        <script>
+            $.fn.hightlight1 = function() {
+                this.css('backgroundColor', '#fffceb').css('color', '#d85030');
+                return this;
+            }
+            $.fn.hightlight2 = function(option) {
+                var bgcolor = option && option.backgroundColor || '#fffceb';
+                var color = option && option.color || '#d85030';
+                this.css('backgroundColor', bgcolor).css('color', color);
+                return this;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="test-highlight1">
+            <p>什么是<span>jQuery</span></p>
+            <p><span>jQuery</span>是目前最流行的<span>JavaScript</span>库。</p>
+        </div>
+        <div id="test-highlight2">
+            <p>什么是<span>jQuery</span> <span>Plugin</span></p>
+            <p>编写<span>jQuery</span> <span>Plugin</span>可以用来扩展<span>jQuery</span>的功能。</p>
+        </div>
+        <script>
+            $('#test-highlight1 span').hightlight1();
+            $('#test-highlight2 span').hightlight2({
+                backgroundColor: '#00a8e6',
+                color: '#ffffff',
+            })
+        </script>
+    </body>
+</html>
