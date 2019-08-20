@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="js/jquery-3.4.0.js"></script>
         <script>
             var r1, r2, s=null;
             try {
@@ -15,4 +16,23 @@
             console.log('r2 = ' + r2);
         </script>
     </head>
+    <body>
+        <button id="btn1">Try</button>
+        <script>
+            $("#btn1").click(function() {
+                var s, r, n;
+                try {
+                    s = prompt('请输入一个数字：');
+                    n = parseInt(s);
+                    if (isNaN(n)) {
+                        throw new Error('输入错误');
+                    }
+                    r = n * n;
+                    console.log(n + ' * ' + n + ' = ' + r);
+                } catch(e) {
+                    console.log(e);
+                }
+            })
+        </script>
+    </body>
 </html>
