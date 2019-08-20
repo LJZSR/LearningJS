@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+        <script>
+            $.fn.external = function() {
+                return this.find('a').each(function() {
+                    var a = $(this);
+                    var url = a.attr('href');
+                    if (url && (url.indexOf('http://') === 0 || url.indexOf('https://') === 0)) {
+                        a.attr('href', '#0')
+                        .removeAttr('target')
+                        .click(function() {
+                            if (confirm('确定前往' + url + '?')) {
+                                window.open(url);
+                            }
+                        });
+                    }
+                })
+            }
+        </script>
+    </head>
+    <body>
+        <div id="test-external">
+            <p>如何学习<a href="http://jquery.com">jQuery</a>？</p>
+            <p>首先，你要学习<a href="/wiki/1022910821149312">JavaScript</a>，并了解基本的<a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a>。</p>
+        </div>
+        <script>
+            $('#test-external').external();
+        </script>
+    </body>
+</html>
