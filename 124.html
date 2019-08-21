@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery-3.4.0.js"></script>
+    </head>
+    <body>
+        <form>
+            <input id="x"> + <input id="y">
+            <button id="calc" type="button">计算</button>
+        </form>
+        <script>
+            $('#calc').click(function () {
+                var x, y, r;
+                x = parseFloat($('#x').val());
+                y = parseFloat($('#y').val());
+                try{
+                    if (isNaN(x) || isNaN(y)) {
+                        throw new Error('输入有误');
+                    }
+                    r = x + y;
+                    alert('计算结果：' + r);
+                } catch(e) {
+                    alert('输入有误！');
+                }
+            });
+        </script>
+    </body>
+</html>
